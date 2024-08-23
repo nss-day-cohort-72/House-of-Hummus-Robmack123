@@ -8,17 +8,19 @@
 //     }
 // })
 
-// export const Veggies = () => {
+export const Vegetables = async () => {
+    const response = await fetch("http://localhost:8088/vegetables")
+    const vegetables = await response.json()
 
-//     let html = `<ul>
-//         ${
-//             vegies.map(vegtable => {
-//                 return `<li>
-//                             <input type="radio" name="vegetable" value="${vegetable.id}" /> ${vegetable.type}
-//                         </li>`
-//             }).join("")
-//         }
-//     </ul>`
+    let html = "<h2>Veggies</h2>"
 
-//     return html
-// }
+    const divStringArray = vegetables.map( (vegetable) => {
+        return `<ul>
+        <input type='radio' name=entree value='${vegetable.id}'> ${vegetable.type}
+    </ul>`
+}
+)
+
+html += divStringArray.join("")
+return html    
+}

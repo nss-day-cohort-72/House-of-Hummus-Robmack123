@@ -11,7 +11,7 @@
         { "id": 9, "name": "Black Eye Pea Falafel", "price": 7.80 },
         { "id": 10, "name": "Pecan Pastitsio", "price": 12.49 }
     ],
-    "veggies": [
+    "vegetables": [
         { "id": 1, "type": "Okra", "price": 2.65 },
         { "id": 2, "type": "Collard Greens", "price": 2.05 },
         { "id": 3, "type": "Swiss Chard", "price": 2.15 },

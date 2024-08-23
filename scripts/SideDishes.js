@@ -1,6 +1,5 @@
 
 
-// const sideDishes = getSides()
 
 // document.addEventListener("change", (event) => {
 //     if (event.target.name === "sideDish") {
@@ -8,19 +7,20 @@
 //     }
 // })
 
-// // Requirement: The radio input elements that this component funcion renders must all have a name of "sideDish"
-// export const Sides = () => {
-//     let html = "<ul>"
 
-//     const listItems = sideDishes.map(dish => {
-//         return `<li>
-//             <input type="radio" />
-//         </li>`
-//     })
+export const Sides = async () => {
+    const response = await fetch("http://localhost:8088/sides")
+    const sides = await response.json()
 
-//     html += listItems.join("")
-//     html += "</ul>"
+    let html = "<h2>Sides</h2>"
+    const divStringArray = sides.map( (side) => { 
+        return `<ul>
+            <input type='radio' name=entree value='${side.id}'> ${side.title}
+        </ul>`
+    }
+)
 
-//     return html
-// }
+html += divStringArray.join("")
 
+return html
+}
