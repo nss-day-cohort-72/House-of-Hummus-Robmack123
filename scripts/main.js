@@ -1,7 +1,11 @@
 import { Entrees } from "./Entrees.js"
+import { Sides } from "./SideDishes.js"
+import { Vegetables } from "./Vegetables.js"
 
 const render = async () => {
     const entreeHTML = await Entrees()
+    const sidesHTML = await Sides()
+    const veggieHTML = await Vegetables()
     const composedHTML = `
         <header class="header">
             <img src="./images/hummus.png" class="logo" />
@@ -11,6 +15,14 @@ const render = async () => {
             <article>
                 <section>
                     ${entreeHTML}
+                </section>
+
+                <section>
+                    ${sidesHTML}
+                </section>
+
+                <section>
+                    ${veggieHTML}
                 </section>
             </article>
         </div>

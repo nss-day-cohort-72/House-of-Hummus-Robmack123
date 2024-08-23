@@ -5,7 +5,7 @@ export const Entrees = async () => {
     let html = "<h2>Entrees</h2>"
     const divStringArray = entrees.map( (entree) => {
         return `<ul>
-            <input type='radio' name=entree value='${entree.iD}'> ${entree.name}'
+            <input type='radio' name=entree value='${entree.id}'> ${entree.name}
         </ul>`
     }
 )
