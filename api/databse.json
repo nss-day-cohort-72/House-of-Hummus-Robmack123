@@ -172,6 +172,12 @@
       "vegetablesId": 6,
       "sidesId": 6,
       "id": 7
+    },
+    {
+      "entreesId": 2,
+      "vegetablesId": 5,
+      "sidesId": 3,
+      "id": 8
     }
   ]
 }

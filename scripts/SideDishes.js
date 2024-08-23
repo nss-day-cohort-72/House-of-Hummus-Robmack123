@@ -1,7 +1,7 @@
 import { setSelectedSides } from "./TransientState.js"
 
 const handleSideChange = (changeEvent) => {
-    if (changeEvent.target.name === "side") {
+    if (changeEvent.target.name === "sideDish") {
         const chosenOption = parseInt(changeEvent.target.value)
         setSelectedSides(chosenOption)
     }
@@ -15,8 +15,8 @@ export const Sides = async () => {
 
     let html = "<h2>Sides</h2>"
     const divStringArray = sides.map( (side) => { 
-        return `<ul>
-            <input type='radio' name='side' value='${side.id}'> ${side.title}
+        return `<ul class="choices__sides">
+            <input type='radio' name='sideDish' value='${side.id}'> ${side.title}
         </ul>`
     }
 )
