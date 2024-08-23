@@ -1,4 +1,6 @@
+import { Orders } from "./DisplayReciepts.js"
 import { Entrees } from "./Entrees.js"
+import { saveOrderSubmission } from "./Sales.js"
 import { Sides } from "./SideDishes.js"
 import { Vegetables } from "./Vegetables.js"
 
@@ -6,6 +8,8 @@ const render = async () => {
     const entreeHTML = await Entrees()
     const sidesHTML = await Sides()
     const veggieHTML = await Vegetables()
+    const OrderBtnHTML = await saveOrderSubmission()
+    const receiptHTML = await Orders()
     const composedHTML = `
         <header class="header">
             <img src="./images/hummus.png" class="logo" />
@@ -28,12 +32,12 @@ const render = async () => {
         </div>
 
         <article>
-            <button id="purchase">Purchase Combo</button>
+            ${OrderBtnHTML}
         </article>
 
         <article class="customerOrders">
             <h2>Monthly Sales</h2>
-            
+            ${receiptHTML}
         </article>
     `
     
@@ -43,9 +47,7 @@ const render = async () => {
 document.addEventListener("createNewOrder", event => {
     console.log("State of data has changed. Regenerating HTML...")
     render()
-}
-
-)
+})
 
 render()
     
