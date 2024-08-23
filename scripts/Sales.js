@@ -1,30 +1,13 @@
+import { saveOrder } from "./TransientState.js"
 
+const handleOrderSubmissionClick = (clickEvent) => {
+    if (clickEvent.target.id === "purchase") {
+        saveOrder();
+    }
+}
 
-// const buildOrderListItem = (order) => {
-//     const veggies = getVeggies()
+export const saveOrderSubmission = () => {
+    document.addEventListener("click", handleOrderSubmissionClick);
 
-
-//     const total = veggiePrice + entreePrice + sidePrice
-
-//     return `<li>
-//         Receipt #${order} = ${total.toLocaleString("en-US", {
-//             style: "currency",
-//             currency: "USD"
-//         })}
-//     </li>`
-// }
-
-// export const Sales = () => {
-//     const sales = getPurchases()
-//     return `
-//         <ul>
-//             ${sales.map(
-//                 (sale) => {
-//                     // Reflect: What is the scope of this `return` keyword?
-//                     return buildOrderListItem(sale)
-//                 }
-//             ).join("")}
-//         </ul>
-//     `
-// }
-
+    return `<button id="purchase">Purchase Combo</button>`
+}

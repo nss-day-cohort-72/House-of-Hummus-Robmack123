@@ -20,7 +20,7 @@ export const setSelectedSides = (sidesId) => {
 }
 
 export const saveOrder = async () => {
-    const postOption = {
+    const postOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -28,8 +28,8 @@ export const saveOrder = async () => {
         body: JSON.stringify(transientState)
     }
 
-    const response = await fetch("http://localhost:8088/orders")
+    const response = await fetch("http://localhost:8088/orders", postOptions)
     
-    const customEvent = new CustomEvent("createNewOder")
+    const customEvent = new CustomEvent("createNewOrder")
     document.dispatchEvent(customEvent)
 }
