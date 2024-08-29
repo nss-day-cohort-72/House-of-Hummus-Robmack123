@@ -16,16 +16,16 @@ const render = async () => {
             <h1 class="title">Laura Kathryn's House of Hummus</h1>
         </header>
         <div>
-            <article>
-                <section>
+            <article class="choices">
+                <section class="options">
                     ${entreeHTML}
                 </section>
 
-                <section>
+                <section class="options">
                     ${sidesHTML}
                 </section>
 
-                <section>
+                <section class="options">
                     ${veggieHTML}
                 </section>
             </article>
