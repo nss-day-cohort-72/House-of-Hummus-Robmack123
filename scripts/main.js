@@ -32,7 +32,9 @@ const render = async () => {
         </div>
 
         <article>
-            ${OrderBtnHTML}
+            <div id="purchaseCombo">
+                ${OrderBtnHTML}
+            </div>
         </article>
 
         <article class="customerOrders">
